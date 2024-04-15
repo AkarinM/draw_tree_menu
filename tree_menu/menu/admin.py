@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from menu.models import MenuName, MenuItem
+from menu.models import MenuName, MenuItem, MenuNameItem
 
 
 # admin.site.register(MenuName)
@@ -13,4 +13,9 @@ class MenuNameAdmin(admin.ModelAdmin):
 
 @admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(MenuNameItem)
+class MenuNameItemAdmin(admin.ModelAdmin):
     pass

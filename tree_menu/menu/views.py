@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def draw_menu(request, menu_name: str, item_id: int = None):
+
+
+    return render(request, 'menu/menu.html', {})
+
+
+
