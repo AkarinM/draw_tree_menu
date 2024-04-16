@@ -18,9 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
+from menu.views import draw_menu
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('menu.urls')),
-    path('', TemplateView.as_view(template_name='menu/menu.html')),
-    path('', TemplateView.as_view(template_name='menu/menu.html')),
+    path('', TemplateView.as_view(template_name='menu/menu.html'), name='homepage'),
+    # path('<str:menu_name>/<int:item_id>/<int:c_level>', draw_menu, name='draw'),
+    path('<str:menu_name>/<int:item_id>/<int:c_level>', draw_menu, name='draw'),
 ]
