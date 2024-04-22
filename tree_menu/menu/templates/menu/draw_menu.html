@@ -1,3 +1,12 @@
+{% autoescape off %}
 {% for item in menu %}
-    <p /> <a href="{% url 'draw' item.menu.name item.item_id %}"> {{item.item.name}} </a>
+    {{item.0 }}
+
+    <li><a href="{% url 'draw' item.1.menu.name item.2 %}"> {{item.1.item.name}} </a></li>
+
+    {{item.3}}
+{% empty %}
+    Меню не найдено
+
 {% endfor %}
+{% endautoescape %}

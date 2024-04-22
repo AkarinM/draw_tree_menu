@@ -26,11 +26,11 @@ class MenuNameItem(models.Model):
     menu = models.ForeignKey(MenuName, on_delete=models.deletion.CASCADE)
     item = models.ForeignKey(MenuItem, on_delete=models.deletion.CASCADE, related_name='menu_name_items_item')
     level = models.PositiveIntegerField(default=0)
-    parent = models.ForeignKey(MenuItem, on_delete=models.deletion.CASCADE, related_name='menu_name_items_parent', null=True)
+    parent = models.ForeignKey(MenuItem, on_delete=models.deletion.CASCADE, related_name='menu_name_items_parent', null=True, blank=True)
     order = models.PositiveIntegerField(default=1)
 
     class Meta:
-        ordering = ['pk', 'level']
+        ordering = ['menu', 'order']
 
     def __str__(self):
         return f'{self.menu.name}/{self.item.name}|lvl:{self.level}'

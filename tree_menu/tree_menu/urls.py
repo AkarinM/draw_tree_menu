@@ -25,5 +25,5 @@ urlpatterns = [
     # path('', include('menu.urls')),
     path('', TemplateView.as_view(template_name='menu/menu.html'), name='homepage'),
     # path('<str:menu_name>/<int:item_id>/<int:c_level>', draw_menu, name='draw'),
-    path('<str:menu_name>/<int:item_id>/<int:c_level>', draw_menu, name='draw'),
+    path('<str:menu_name>/<path:c_path>', draw_menu, name='draw'),
 ]
