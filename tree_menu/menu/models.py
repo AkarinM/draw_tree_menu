@@ -27,6 +27,7 @@ class MenuNameItem(models.Model):
     item = models.ForeignKey(MenuItem, on_delete=models.deletion.CASCADE, related_name='menu_name_items_item')
     level = models.PositiveIntegerField(default=0)
     parent = models.ForeignKey(MenuItem, on_delete=models.deletion.CASCADE, related_name='menu_name_items_parent', null=True)
+    order = models.PositiveIntegerField(default=1)
 
     class Meta:
         ordering = ['pk', 'level']
